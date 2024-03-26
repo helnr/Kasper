@@ -527,20 +527,61 @@ body {
     margin-top: 5rem;
     padding: 1rem 1rem 0;
     background-color: var(--secondary-color);
+    position: relative;
+}
+
+@media (min-width: 400px) {
+    .phone-advertise {
+        padding: 8rem 0 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .phone-advertise {
+        display: flex;
+        flex-direction: row-reverse;
+        overflow: hidden;
+    }
 }
 
 .phone-advertise .info-background {
     background-color: var(--main-color);
 }
 
+@media (min-width: 992px) {
+    .phone-advertise .info-background {
+        width: 45%;
+        order: 2;
+        margin-bottom: 8rem;
+    }
+}
+
+.phone-advertise .container {
+    padding: 0;
+}
+
+
 .phone-advertise .info {
     color: white;
-    padding: 1em 0;
+    padding: .4em;
+}
+
+@media (min-width: 279px) {
+    .phone-advertise .info {
+        padding: 1em;
+    }
+}
+
+@media (min-width: 992px) {
+    /* .phone-advertise .info {
+        width: 50%;
+        order: 2;
+        margin-bottom: 8rem;
+    } */
 }
 
 .phone-advertise .info h3 {
-    /* font-size: 2rem; */
-    /* margin-bottom: 3.2em; */
+
     font-size: 1.2rem;
     margin-bottom: 1em;
 }
@@ -550,13 +591,34 @@ body {
 }
 
 .phone-advertise .info ul li:not(:last-of-type) {
-    /* margin-bottom: 1.4em; */
     margin-bottom: 1em;
 }
 
 .phone-advertise .info ul li .icon {
-    /* margin-right: 1.9em; */
     margin-right: 1.1em;
+}
+
+@media (min-width: 400px) {
+    .phone-advertise .info {
+        padding: 3em;
+    }
+
+    .phone-advertise .info h3 {
+        font-size: 2rem;
+        margin-bottom: 3.2em;
+    }
+
+    .phone-advertise .info ul {
+        font-size: 1.3rem;
+    }
+
+    .phone-advertise .info ul li:not(:last-of-type) {
+        margin-bottom: 1.4em;
+    }
+
+    .phone-advertise .info ul li .icon {
+        margin-right: 1.9em;
+    }
 }
 
 .phone-advertise .phones {
@@ -566,6 +628,21 @@ body {
     /* background-color: red; */
     overflow: hidden;
     margin: 2rem auto;
+}
+
+@media (min-width: 767px) {
+    .phone-advertise .phones {
+        --phones-size: 50vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .phone-advertise .phones {
+        --phones-size: 297px;
+        position: absolute;
+        bottom: -6%;
+        right: 50%;
+    }
 }
 
 .phone-advertise .phones .phones-container {
@@ -596,19 +673,29 @@ body {
 
 .phone-advertise .phones .phones-container .black-phone .imgs .content-img {
     position: absolute;
-    width: 95.6%;
+    width: 100%;
     height: 100%;
-    z-index: 3;
-    top: 11.7%;
-    left: 2.2%;
+    top: 0;
+    -webkit-mask-image: url(../images/BlackiPhoneMask.svg);
+    mask-image: url(../images/BlackiPhoneMask.svg);
+    -webkit-mask-size: 88.8% 117%;
+    mask-size: 88.8% 117%;
+    -webkit-mask-position: 47% 16%;
+    mask-position: 47% 16%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 .phone-advertise .phones .phones-container .black-phone .imgs .content-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .3s ease-in-out;
 }
 
+.phone-advertise .phones .phones-container .black-phone .imgs .content-img img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
 
 /* White Phone */
 .phone-advertise .phones .phones-container .white-phone {
@@ -635,14 +722,27 @@ body {
     width: 100%;
     height: 100%;
     top: 0;
-    mask: url(../images/WhiteiPhoneMask.svg);
 
-    /* top: 11.7%; */
-    /* right: 6.3%; */
+    -webkit-mask-image: url(../images/WhiteiPhoneMask.svg);
+    mask-image: url(../images/WhiteiPhoneMask.svg);
+
+    -webkit-mask-position: 49% 90%;
+    mask-position: 49% 90%;
+
+    -webkit-mask-size: 87%;
+    mask-size: 87%;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 .phone-advertise .phones .phones-container .white-phone .imgs .content-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .3s ease-in-out;
+}
+
+.phone-advertise .phones .phones-container .white-phone .imgs .content-img img:hover {
+    transform: scale(1.2) translateY(-5px);
 }
