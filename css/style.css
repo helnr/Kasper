@@ -34,6 +34,7 @@ body {
 @media (min-width: 768px) {
     .container {
         width: 750px;
+        padding: 0;
     }
 }
 
@@ -1333,4 +1334,234 @@ body {
 
 .about-us>footer span {
     font-size: 1.3rem;
+}
+
+/* Pricing Section */
+
+.pricing {
+    padding-bottom: 10rem;
+    --sections-padding: clamp(30px, 6vw, 5rem);
+}
+
+.pricing .plans {
+    display: grid;
+    gap: 10rem;
+}
+
+@media (min-width: 500px) {
+    .pricing .plans {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .pricing .plans {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.plans .plan {}
+
+.plans .plan header {
+    border-top: 1px solid var(--third-color);
+    border-bottom: 1px solid var(--third-color);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.plans .plan header h4 {
+    margin-bottom: .8em;
+    text-transform: uppercase;
+}
+
+.plans .plan header .plan__price {
+    font-weight: 600;
+}
+
+.plans .plan header .plan__price>span:first-of-type {
+    font-size: 2rem;
+    vertical-align: top;
+}
+
+.plans .plan header .plan__price>span:nth-of-type(2) {
+    font-size: 5.9rem;
+}
+
+.plans .plan header .plan__price>span:last-of-type {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.plans .plan header .plan__price>span:not(:last-of-type) {
+    margin-right: 5px;
+}
+
+.plans .plan header .plan__price>span:last-of-type::before {
+    content: '/ ';
+}
+
+
+.plans .plan .plan__body {
+    text-align: center;
+}
+
+.plans .plan .plan__body li {
+    padding: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plans .plan .plan__body>li:not(:last-of-type) {
+    border-bottom: 1px solid var(--third-color);
+
+}
+
+.plans .plan footer {
+    padding: 30px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--third-color);
+}
+
+.plans .plan footer button {
+    background-color: transparent;
+    padding: .7em 2em;
+    border: 1px solid var(--third-color);
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.plans .plan footer button:hover {
+    background-color: var(--third-color);
+}
+
+
+.special-request {
+    padding: var(--sections-padding) 0;
+    text-align: center;
+}
+
+.special-request p {
+    text-transform: capitalize;
+    line-height: 1.3;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+.special-request a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding: .7em 2em;
+    display: inline-block;
+    background-color: var(--third-color);
+    color: white;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+
+.subscribe {
+    background-color: var(--secondary-color);
+    padding: var(--sections-padding) 0;
+    text-align: center;
+    --margin: 15px;
+    color: white;
+
+}
+
+.subscribe .container {
+    display: grid;
+    justify-content: center;
+}
+
+
+.subscribe .mail-part {
+    max-width: 500px;
+}
+
+@media (min-width: 992px) {
+    .subscribe .container {
+        grid-template-columns: 54.5% 45.5%;
+        gap: 1rem;
+    }
+
+    .subscribe .mail-part {
+        max-width: none;
+    }
+
+    .subscribe p {
+        max-width: none;
+    }
+}
+
+.subscribe .mail-part i {
+    margin-bottom: var(--margin);
+    font-size: 1.6rem;
+    color: white;
+}
+
+.subscribe .mail-part input {
+    margin-bottom: var(--margin);
+    padding: 1em;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 1px solid white;
+    font-size: 1rem;
+    background-color: transparent;
+    color: white;
+}
+
+.subscribe .mail-part input:focus {
+    outline: none;
+}
+
+.subscribe .mail-part:focus-within {
+    outline: 1px solid orange;
+}
+
+.subscribe .mail-part button {
+    font-size: 1rem;
+    ;
+    text-transform: capitalize;
+    background-color: var(--third-color);
+    padding: .5em 1em;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.subscribe p {
+    margin-top: var(--margin);
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+@media (min-width: 500px) {
+    .subscribe .mail-part {
+        display: flex;
+        border: 1px solid white;
+    }
+
+    .subscribe .mail-part input {
+        padding: 0;
+        margin: 0;
+        border: none;
+        padding-left: 10px;
+    }
+
+    .subscribe .mail-part button {
+        padding: 1.7em;
+        margin: 0;
+        border: none;
+    }
+
+    .subscribe .mail-part i {
+        padding-left: 10px;
+        margin: 0;
+        align-self: center;
+    }
 }
