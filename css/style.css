@@ -1204,7 +1204,7 @@ body {
 }
 
 .about-us .data .testimonials .testimonial-block {
-    margin-bottom: clamp(15px, 5vw, 2.5rem);
+    /* margin-bottom: ; */
     --image-size: clamp(60px, 5vw, 100px);
 }
 
@@ -1230,6 +1230,7 @@ body {
 .about-us .data .testimonials .testimonial-block .text {
     font-size: 1.3rem;
     max-width: 410px;
+    position: relative;
 }
 
 
@@ -1237,6 +1238,7 @@ body {
     line-height: 1.6;
     text-align: center;
     margin-bottom: 10px;
+    margin-top: clamp(15px, 5vw, 2.5rem);
     color: var(--secondary-color);
 }
 
@@ -1250,19 +1252,40 @@ body {
 
 @media (min-width: 758px) {
     .about-us .data .testimonials .testimonial-block {
-        display: flow-root;
+        display: flex;
         --image-size: 100px;
+        margin-bottom: 3rem;
     }
 
     .about-us .data .testimonials .testimonial-block .image {
         margin: 0;
-        margin-top: -4%;
+        margin-top: 3%;
         margin-right: 3rem;
-        float: left;
+        flex-shrink: 0;
     }
 
     .about-us .data .testimonials .testimonial-block .text p {
         text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .about-us .data .testimonials .testimonial-block .text hr {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+
+    .about-us .data .testimonials .testimonial-block .text span {
+        position: absolute;
+        text-align: left;
+        right: 0;
+        bottom: 5px;
+    }
+
+    .about-us .data .testimonials footer {
+        margin-top: 10px;
     }
 }
 
@@ -1564,4 +1587,159 @@ body {
         margin: 0;
         align-self: center;
     }
+}
+
+.contact-us {
+    padding-bottom: 10rem;
+}
+
+.contact-us .content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 3vw, 1.5em);
+}
+
+@media (min-width: 992px) {
+    .contact-us .content {
+        flex-direction: row;
+    }
+}
+
+.contact-us form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    --text-padding: clamp(10px, 3vw, 1.5em) clamp(10px, 3vw, 1.5em);
+    gap: clamp(10px, 3vw, 2.5em);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+}
+
+@media (min-width: 992px) {
+    .contact-us form {
+        max-width: none;
+    }
+}
+
+.contact-us form :first-child {
+    font-size: 1.3rem;
+    padding: var(--text-padding);
+}
+
+.contact-us form :nth-child(2) {
+    padding: var(--text-padding);
+}
+
+.contact-us form :nth-child(3) {
+    padding: var(--text-padding);
+    resize: none;
+    aspect-ratio: 2 / 1;
+}
+
+.contact-us form :last-child {
+    padding: clamp(5px, 1.5vw, 2rem) clamp(15px, 4.5vw, 5rem);
+    background-color: var(--third-color);
+    border: 1px solid white;
+    color: white;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.contact-us .info {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+    .contact-us .info {
+        text-align: left;
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+}
+
+.contact-us .info .block {
+    margin-bottom: clamp(3rem, 5vw, 11.3rem);
+}
+
+@media (min-width: 992px) {
+    .contact-us .info .block {
+        margin-bottom: clamp(130px, 13vw, 133px);
+    }
+}
+
+.contact-us .info .block h4 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-us .info .block a {
+    display: block;
+    text-decoration: none;
+    color: #a8a8a8;
+    font-size: 1.3rem;
+}
+
+.contact-us .info .block span {
+    display: block;
+    color: #a8a8a8;
+    font-size: 1.3rem;
+}
+
+body>footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: white;
+    font-size: clamp(1rem, 5vw + .3rem, 1.6rem);
+}
+
+body>footer img {
+    margin: clamp(20px, 10vw, 12rem) 0 clamp(10px, 5vw, 6rem);
+}
+
+body>footer h4 {
+    font-size: clamp(1.2rem, 6vw + .3rem, 2rem);
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: clamp(7.5px, 3.75vw, 2rem);
+}
+
+body>footer h4::after {
+    width: 140%;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 100%;
+    height: 1px;
+    background-color: white;
+    transform: translateX(-15%);
+}
+
+
+
+body>footer .social-media {
+    padding-top: clamp(7.5px, 3.75vw, 2rem);
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+body>footer p {
+    font-size: 0.9em;
+    margin-top: clamp(20px, 10vw, 8rem);
+    margin-bottom: 4rem;
+    display: inline-block;
+}
+
+body>footer p span {
+    color: var(--third-color);
+    font-weight: bold;
 }
